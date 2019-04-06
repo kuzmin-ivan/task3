@@ -281,7 +281,6 @@
 .letter-body_opened__content {
     padding: 15px;
     font: 15px HelveticaNeue sans-serif;
-
     white-space: normal;
 }
 
@@ -309,15 +308,9 @@
     min-width: 485px;
 }
 
-.letter-list-item {
-    height: 20px;
-}
 .letter-body_covered__checkbox-wrapper {
     padding: 13px 10px 13px 20px;
     cursor: pointer;
-}
-.letter-list-item__check-letter {
-    display: inline-block;
 }
 
 .check-letter_visually-hidden {
