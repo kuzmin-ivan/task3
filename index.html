@@ -11,17 +11,16 @@
 
 <header class="yandex-mail__header header">
     <div class="burger-menu header__burger-menu">
-        <div class="stripe burger-menu__stripe">
-            <div class="stripe burger-menu__stripe">
-                <div class="stripe burger-menu__stripe"></div>
+        <div class="burger-menu__stripe">
+            <div class="burger-menu__stripe">
+                <div class="burger-menu__stripe"></div>
             </div>
         </div>
     </div>
     <img class="header__yandex-mail-logo" src="images/yandex-mail-logo.svg" alt="Лого - Яндекс Почта"/>
     <form class="mail-search header__mail-search">
         <label>
-            <input class="mail-search__input" type="text" placeholder="Поиск" onfocus="placeholder = ''"
-                   onblur="placeholder = 'Поиск'"/>
+            <input class="mail-search__input" type="text" placeholder="Поиск"/>
         </label>
         <div class="mail-search__clear">×</div>
     </form>
@@ -32,12 +31,12 @@
         <button class="nav-menu__action-button">Написать</button>
         <button class="nav-menu__action-button nav-menu__action-button-indent" onclick=getNewMessage()>Получить письмо</button>
         <ul class="nav-menu__menu-list-tabs menu-list-tabs">
-            <li class="menu-list-tabs__tab menu-list-tabs__incoming-tab" onclick="location.href='#'">Входящие</li>
-            <li class="menu-list-tabs__tab" onclick="location.href='#'">Отправленные</li>
-            <li class="menu-list-tabs__tab" onclick="location.href='#'">Удалённые</li>
-            <li class="menu-list-tabs__tab" onclick="location.href='#'">Спам</li>
-            <li class="menu-list-tabs__tab" onclick="location.href='#'">Черновики</li>
-            <li class="menu-list-tabs__tab" onclick="location.href='#'">Создать папку</li>
+            <li class="menu-list-tabs__tab menu-list-tabs__incoming-tab">Входящие</li>
+            <li class="menu-list-tabs__tab">Отправленные</li>
+            <li class="menu-list-tabs__tab">Удалённые</li>
+            <li class="menu-list-tabs__tab">Спам</li>
+            <li class="menu-list-tabs__tab">Черновики</li>
+            <li class="menu-list-tabs__tab">Создать папку</li>
         </ul>
     </nav>
     <div class="mail-content__mail-box mail-box">

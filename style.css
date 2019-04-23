@@ -53,16 +53,13 @@
     cursor: pointer;
 }
 
-.stripe {
-    width: 20px;
-    height: 3px;
-    background-color: #000000;
-}
-
 .burger-menu__stripe {
     display: inline-block;
     margin-top: 7px;
     margin-bottom: 7px;
+    width: 20px;
+    height: 3px;
+    background-color: #000000;
 }
 
 .header__yandex-mail-logo {
