@@ -15,6 +15,12 @@ function uncheckAllChecker(currentCheckBox) {
 }
 
 function removeLetters() {
+    let openedLetters = document.body.querySelectorAll('.letter-body_opened');
+    for (let i = 0; i < openedLetters.length; i++) {
+        if (!openedLetters[i].classList.contains('letter-body_non-displayed')) {
+            return
+        }
+    }
     let checkBoxes = document.body.querySelectorAll('.check-letter_visually-hidden');
     for (let i = 1; i < checkBoxes.length; i++) {
         if (checkBoxes[i].checked) {
@@ -96,7 +102,6 @@ function getNewMessage() {
                             квартире, однако нередко пытаются доминировать даже над более крупными соседями.
                         </div>
                     </div>
-
                     <div class="letter-body_covered">
                         <label class="letter-body_covered__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
@@ -124,11 +129,20 @@ function getNewMessage() {
                     </div>
                     <div class="mail-box__hr-line"></div>
                 </div>`;
+
     let lettersSection = document.querySelector('.letters-section');
     let newLetter = document.createElement('div');
     newLetter.classList.add('letters-section__letter-wrapper');
     newLetter.innerHTML = letterTemplate;
     newLetter.classList.add('letters-section__add-letter');
+    let openedLetter = document.body.querySelectorAll('.letter-body_opened');
+    if (openedLetter.length !== 0) {
+        for (let i = 0; i < openedLetter.length; i++) {
+            if (!openedLetter[i].classList.contains('letter-body_non-displayed')) {
+                newLetter.classList.add('letter-body_non-displayed');
+            }
+        }
+    }
     lettersSection.insertBefore(newLetter, lettersSection.firstElementChild);
     newLetter.addEventListener('animationend', () => {
         newLetter.classList.remove('letters-section__add-letter');
