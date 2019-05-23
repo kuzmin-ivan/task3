@@ -352,7 +352,7 @@
     height: 30px;
 }
 
-.mini-logo {
+.mini-sender-pic {
     width: 30px;
     height: 30px;
 }
@@ -449,11 +449,11 @@
     min-height: 380px;
 }
 
-.letters-section__delete-letter {
+.letters-section__delete-letter-animation {
     animation: deleteLetter 0.5s linear;
 }
 
-.letters-section__add-letter {
+.letters-section__add-letter-animation {
     animation: addLetter 0.5s linear;
 }
 

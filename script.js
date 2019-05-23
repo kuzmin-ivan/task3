@@ -29,14 +29,14 @@ function removeLetters() {
             while (!checkedLetter.classList.contains('letters-section__letter-wrapper')) {
                 checkedLetter = checkedLetter.parentNode;
             }
-            checkedLetter.classList.add('letters-section__delete-letter');
+            checkedLetter.classList.add('letters-section__delete-letter-animation');
             checkedLetter.addEventListener('animationend', () => {
                 checkedLetter.parentNode.removeChild(checkedLetter);
             });
         }
     }
-    if (checkBoxes[0].checked) {
-        checkBoxes[0].checked = false;
+    if (checkAllBox.checked) {
+        checkAllBox.checked = false;
     }
 }
 
@@ -110,7 +110,7 @@ function getNewMessage() {
                             <span class="check-letter__box"></span>
                         </label>
                         <div class="covered-letter__mini-logo-wrapper">
-                            <img class="mini-logo" src="images/ya-mini-logo.png"
+                            <img class="mini-sender-pic" src="images/ya-mini-logo.png"
                                  alt="Мини-лого отправителя - Яндекс">
                         </div>
                         <div class="covered-letter__click-to-open-wrapper covered-letter_not-read"
@@ -118,7 +118,7 @@ function getNewMessage() {
                             <div class="sender-name covered-letter__item main-content__distinguished">
                                 Команда Яндекс.Почты
                             </div>
-                            <div class="is-read-mark is-read-mark_not-read covered-letter__item"></div>
+                            <div class="is-read-mark_not-read covered-letter__item"></div>
                             <div class="title-text covered-letter__item main-content__distinguished">
                                 Вы можете прочитать данное письмо.
                             </div>
@@ -135,7 +135,7 @@ function getNewMessage() {
     let newLetter = document.createElement('div');
     newLetter.classList.add('letters-section__letter-wrapper');
     newLetter.innerHTML = letterTemplate;
-    newLetter.classList.add('letters-section__add-letter');
+    newLetter.classList.add('letters-section__add-letter-animation');
     let openedLetter = document.body.querySelectorAll('.opened-letter');
     if (openedLetter.length !== 0) {
         for (let i = 0; i < openedLetter.length; i++) {
@@ -146,10 +146,9 @@ function getNewMessage() {
     }
     lettersSection.insertBefore(newLetter, lettersSection.firstElementChild);
     newLetter.addEventListener('animationend', () => {
-        newLetter.classList.remove('letters-section__add-letter');
+        newLetter.classList.remove('letters-section__add-letter-animation');
     });
-    let checkBoxes = document.body.querySelectorAll('.check-letter_visually-hidden');
-    if (checkBoxes[0].checked) {
-        checkBoxes[0].checked = false;
+    if (checkAllBox.checked) {
+        checkAllBox.checked = false;
     }
 }
