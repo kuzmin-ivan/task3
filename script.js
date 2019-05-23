@@ -1,5 +1,6 @@
+let checkAllBox = document.querySelector('#check-all-letters');
+
 function checkAll() {
-    let checkAllBox = document.querySelector('#check-all-letters');
     let checkBoxes = document.body.querySelectorAll('.check-letter_visually-hidden');
     checkBoxes.forEach(
         checkBox => {
@@ -10,14 +11,14 @@ function checkAll() {
 
 function uncheckAllChecker(currentCheckBox) {
     if (!currentCheckBox.checked) {
-        document.getElementById('check-all-letters').checked = false;
+        checkAllBox.checked = false;
     }
 }
 
 function removeLetters() {
-    let openedLetters = document.body.querySelectorAll('.letter-body_opened');
+    let openedLetters = document.body.querySelectorAll('.opened-letter');
     for (let i = 0; i < openedLetters.length; i++) {
-        if (!openedLetters[i].classList.contains('letter-body_non-displayed')) {
+        if (!openedLetters[i].classList.contains('non-displayed')) {
             return
         }
     }
@@ -44,11 +45,11 @@ function hideOtherLetters(currentReadableLetter) {
     let wrapperCurLetter = currentReadableLetter.parentNode.parentNode;
     for (let i = 0; i < letterSection.length; i++) {
         if (letterSection[i] !== wrapperCurLetter) {
-            letterSection[i].classList.add('letter-body_non-displayed');
+            letterSection[i].classList.add('non-displayed');
         } else {
-            letterSection[i].querySelector('.letter-body_opened').classList.remove('letter-body_non-displayed');
-            letterSection[i].querySelector('.letter-body_covered').classList.add('letter-body_non-displayed');
-            letterSection[i].querySelector('.mail-box__hr-line').classList.add('letter-body_non-displayed');
+            letterSection[i].querySelector('.opened-letter').classList.remove('non-displayed');
+            letterSection[i].querySelector('.covered-letter').classList.add('non-displayed');
+            letterSection[i].querySelector('.mail-box__hr-line').classList.add('non-displayed');
         }
     }
 }
@@ -58,21 +59,21 @@ function showOtherLetters(currentClosableLetter) {
     let wrapperCurLetter = currentClosableLetter.parentNode.parentNode;
     for (let i = 0; i < letterSection.length; i++) {
         if (letterSection[i] !== wrapperCurLetter) {
-            letterSection[i].classList.remove('letter-body_non-displayed');
+            letterSection[i].classList.remove('non-displayed');
         } else {
-            letterSection[i].querySelector('.letter-body_opened').classList.add('letter-body_non-displayed');
-            letterSection[i].querySelector('.letter-body_covered').classList.remove('letter-body_non-displayed');
-            letterSection[i].querySelector('.mail-box__hr-line').classList.remove('letter-body_non-displayed');
+            letterSection[i].querySelector('.opened-letter').classList.add('non-displayed');
+            letterSection[i].querySelector('.covered-letter').classList.remove('non-displayed');
+            letterSection[i].querySelector('.mail-box__hr-line').classList.remove('non-displayed');
         }
     }
 }
 
 function getNewMessage() {
     let letterTemplate = `
-                    <div class="letter-body_opened letter-body_non-displayed">
-                        <div class="letter-body_opened__close" onclick="showOtherLetters(this)">×</div>
-                        <div class="letter-body_opened__content main-content__distinguished">
-                            <img class="letter-body_opened__york-image" src="images/york-img.png"
+                    <div class="opened-letter non-displayed">
+                        <div class="opened-letter__closer" onclick="showOtherLetters(this)">×</div>
+                        <div class="opened-letter__content main-content__distinguished">
+                            <img class="opened-letter__york-image" src="images/york-img.png"
                                  alt="Йоркширский терьер" width="370" height="370">
                             Йоркширский терьер — небольшая собака, популярность которой значительно выросла в последние
                             несколько десятилетий. Скромный размер и кукольная внешность покорили миллионы сердец во
@@ -102,26 +103,26 @@ function getNewMessage() {
                             квартире, однако нередко пытаются доминировать даже над более крупными соседями.
                         </div>
                     </div>
-                    <div class="letter-body_covered">
-                        <label class="letter-body_covered__checkbox-wrapper check-letter">
+                    <div class="covered-letter">
+                        <label class="covered-letter__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
                                    onclick=uncheckAllChecker(this)>
                             <span class="check-letter__box"></span>
                         </label>
-                        <div class="letter-body_covered__mini-logo-wrapper">
+                        <div class="covered-letter__mini-logo-wrapper">
                             <img class="mini-logo" src="images/ya-mini-logo.png"
                                  alt="Мини-лого отправителя - Яндекс">
                         </div>
-                        <div class="letter-body_covered__click-to-open-wrapper is-read_not-read"
+                        <div class="covered-letter__click-to-open-wrapper covered-letter_not-read"
                              onclick=hideOtherLetters(this)>
-                            <div class="sender-name letter-body_covered__item main-content__distinguished">
+                            <div class="sender-name covered-letter__item main-content__distinguished">
                                 Команда Яндекс.Почты
                             </div>
-                            <div class="is-read-mark is-read-mark_not-read letter-body_covered__item"></div>
-                            <div class="title-text letter-body_covered__item main-content__distinguished">
+                            <div class="is-read-mark is-read-mark_not-read covered-letter__item"></div>
+                            <div class="title-text covered-letter__item main-content__distinguished">
                                 Вы можете прочитать данное письмо.
                             </div>
-                            <div class="date-info letter-body_covered__item main-content__distinguished">
+                            <div class="date-info covered-letter__item main-content__distinguished">
                                 6
                                 авг
                             </div>
@@ -135,11 +136,11 @@ function getNewMessage() {
     newLetter.classList.add('letters-section__letter-wrapper');
     newLetter.innerHTML = letterTemplate;
     newLetter.classList.add('letters-section__add-letter');
-    let openedLetter = document.body.querySelectorAll('.letter-body_opened');
+    let openedLetter = document.body.querySelectorAll('.opened-letter');
     if (openedLetter.length !== 0) {
         for (let i = 0; i < openedLetter.length; i++) {
-            if (!openedLetter[i].classList.contains('letter-body_non-displayed')) {
-                newLetter.classList.add('letter-body_non-displayed');
+            if (!openedLetter[i].classList.contains('non-displayed')) {
+                newLetter.classList.add('non-displayed');
             }
         }
     }

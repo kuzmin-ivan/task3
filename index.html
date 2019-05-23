@@ -63,10 +63,10 @@
         <div class="mail-box__letters-section-wrapper">
             <section class="letters-section">
                 <div class="letters-section__letter-wrapper">
-                    <div class="letter-body_opened letter-body_non-displayed">
-                        <div class="letter-body_opened__close" onclick="showOtherLetters(this)">×</div>
-                        <div class="letter-body_opened__content main-content__distinguished">
-                            <img class="letter-body_opened__york-image" src="images/york-img.png"
+                    <div class="opened-letter non-displayed">
+                        <div class="opened-letter__closer" onclick="showOtherLetters(this)">×</div>
+                        <div class="opened-letter__content main-content__distinguished">
+                            <img class="opened-letter__york-image" src="images/york-img.png"
                                  alt="Йоркширский терьер" width="370" height="370">
                             Йоркширский терьер — небольшая собака, популярность которой значительно выросла в последние
                             несколько десятилетий. Скромный размер и кукольная внешность покорили миллионы сердец во
@@ -97,26 +97,26 @@
                         </div>
                     </div>
 
-                    <div class="letter-body_covered">
-                        <label class="letter-body_covered__checkbox-wrapper check-letter">
+                    <div class="covered-letter">
+                        <label class="covered-letter__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
                                    onclick=uncheckAllChecker(this)>
                             <span class="check-letter__box"></span>
                         </label>
-                        <div class="letter-body_covered__mini-logo-wrapper">
+                        <div class="covered-letter__mini-logo-wrapper">
                             <img class="mini-logo" src="images/ya-mini-logo.png"
                                  alt="Мини-лого отправителя - Яндекс">
                         </div>
-                        <div class="letter-body_covered__click-to-open-wrapper is-read_not-read"
+                        <div class="covered-letter__click-to-open-wrapper covered-letter_not-read"
                              onclick=hideOtherLetters(this)>
-                            <div class="sender-name letter-body_covered__item main-content__distinguished">
+                            <div class="sender-name covered-letter__item main-content__distinguished">
                                 Команда Яндекс.Почты
                             </div>
-                            <div class="is-read-mark is-read-mark_not-read letter-body_covered__item"></div>
-                            <div class="title-text letter-body_covered__item main-content__distinguished">
+                            <div class="is-read-mark_not-read covered-letter__item"></div>
+                            <div class="title-text covered-letter__item main-content__distinguished">
                                 Вы можете прочитать данное письмо.
                             </div>
-                            <div class="date-info letter-body_covered__item main-content__distinguished">
+                            <div class="date-info covered-letter__item main-content__distinguished">
                                 6
                                 авг
                             </div>
@@ -125,25 +125,25 @@
                     <div class="mail-box__hr-line"></div>
                 </div>
                 <div class="letters-section__letter-wrapper">
-                    <div class="letter-body_covered">
-                        <label class="letter-body_covered__checkbox-wrapper check-letter">
+                    <div class="covered-letter">
+                        <label class="covered-letter__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
                                    onclick=uncheckAllChecker(this)>
                             <span class="check-letter__box"></span>
                         </label>
-                        <div class="letter-body_covered__mini-logo-wrapper">
+                        <div class="covered-letter__mini-logo-wrapper">
                             <img class="mini-logo" src="images/ya-mini-logo.png"
                                  alt="Мини-лого отправителя - Яндекс">
                         </div>
-                        <div class="letter-body_covered__click-to-open-wrapper is-read_not-read">
-                            <div class="sender-name letter-body_covered__item main-content__distinguished">
+                        <div class="covered-letter__click-to-open-wrapper covered-letter_not-read">
+                            <div class="sender-name covered-letter__item main-content__distinguished">
                                 Команда Яндекс.Почты
                             </div>
-                            <div class="is-read-mark is-read-mark_not-read letter-body_covered__item"></div>
-                            <div class="title-text letter-body_covered__item main-content__distinguished">
+                            <div class="is-read-mark_not-read covered-letter__item"></div>
+                            <div class="title-text covered-letter__item main-content__distinguished">
                                 Как читать почту с мобильного
                             </div>
-                            <div class="date-info letter-body_covered__item main-content__distinguished">
+                            <div class="date-info covered-letter__item main-content__distinguished">
                                 6
                                 июл
                             </div>
@@ -153,25 +153,25 @@
                 </div>
 
                 <div class="letters-section__letter-wrapper">
-                    <div class="letter-body_covered">
-                        <label class="letter-body_covered__checkbox-wrapper check-letter">
+                    <div class="covered-letter">
+                        <label class="covered-letter__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
                                    onclick=uncheckAllChecker(this)>
                             <span class="check-letter__box"></span>
                         </label>
-                        <div class="letter-body_covered__mini-logo-wrapper">
+                        <div class="covered-letter__mini-logo-wrapper">
                             <img class="mini-logo" src="images/ya-mini-logo.png"
                                  alt="Мини-лого отправителя - Яндекс">
                         </div>
-                        <div class="letter-body_covered__click-to-open-wrapper is-read">
-                            <div class="sender-name letter-body_covered__item main-content__distinguished">
+                        <div class="covered-letter__click-to-open-wrapper covered-letter_read">
+                            <div class="sender-name covered-letter__item main-content__distinguished">
                                 Команда Яндекс.Почты
                             </div>
-                            <div class="is-read-mark letter-body_covered__item"></div>
-                            <div class="title-text letter-body_covered__item main-content__distinguished">
+                            <div class="is-read-mark covered-letter__item"></div>
+                            <div class="title-text covered-letter__item main-content__distinguished">
                                 Как читать почту с мобильного
                             </div>
-                            <div class="date-info letter-body_covered__item main-content__distinguished">
+                            <div class="date-info covered-letter__item main-content__distinguished">
                                 6
                                 июл
                             </div>
@@ -181,25 +181,25 @@
                 </div>
 
                 <div class="letters-section__letter-wrapper">
-                    <div class="letter-body_covered">
-                        <label class="letter-body_covered__checkbox-wrapper check-letter">
+                    <div class="covered-letter">
+                        <label class="covered-letter__checkbox-wrapper check-letter">
                             <input class="check-letter_visually-hidden" type="checkbox"
                                    onclick=uncheckAllChecker(this)>
                             <span class="check-letter__box"></span>
                         </label>
-                        <div class="letter-body_covered__mini-logo-wrapper">
+                        <div class="covered-letter__mini-logo-wrapper">
                             <img class="mini-logo" src="images/ya-mini-logo.png"
                                  alt="Мини-лого отправителя - Яндекс">
                         </div>
-                        <div class="letter-body_covered__click-to-open-wrapper is-read">
-                            <div class="sender-name letter-body_covered__item main-content__distinguished">
+                        <div class="covered-letter__click-to-open-wrapper covered-letter_read">
+                            <div class="sender-name covered-letter__item main-content__distinguished">
                                 Яндекс
                             </div>
-                            <div class="is-read-mark letter-body_covered__item"></div>
-                            <div class="title-text letter-body_covered__item main-content__distinguished">
+                            <div class="is-read-mark covered-letter__item"></div>
+                            <div class="title-text covered-letter__item main-content__distinguished">
                                 Соберите всю почту в этот ящик
                             </div>
-                            <div class="date-info letter-body_covered__item main-content__distinguished">
+                            <div class="date-info covered-letter__item main-content__distinguished">
                                 6
                                 июл
                             </div>
